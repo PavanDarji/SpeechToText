@@ -1,12 +1,12 @@
-let speechRecognition = window.webkitSpeechRecognition
+var speechRecognition = window.webkitSpeechRecognition
 
-let recognition = new speechRecognition()
+var recognition = new speechRecognition()
 
-let textbox = $("#textbox")
+var textbox = $("#textbox")
 
-let instruction = $("#instruction")
+var instruction = $("#instruction")
 
-let content = ' '
+var content = ' '
 
 recognition.continuous = true
 
@@ -25,8 +25,8 @@ recognition.onerror = function () {
 }
 
 recognition.onresult = function (event) {
-    let current = event.resultIndex;
-    let tarnscript = event.results[current][0].tarnscript
+    var current = event.resultIndex;
+    var tarnscript = event.results[current][0].tarnscript
     content += tarnscript
     textbox.val(content)
 }
